@@ -12,10 +12,10 @@
 /**:
   ros__parameters:
       object_detection:
-          custom_onnx_file: '/home/eveline/DEV_TEST/as_workspace/src/as_computer_vision/as_computer_vision/models/yolo11s_nms.onnx' # Path to the YOLO-like ONNX file for custom object detection directly performed by the ZED SDK
+          custom_onnx_file: '/home/lorenzo/Desktop/repo/fc/as_workspace/src/as_computer_vision/as_computer_vision/models/best.onnx' # Path to the YOLO-like ONNX file for custom object detection directly performed by the ZED SDK
           custom_onnx_input_size: 640 # Resolution used with the YOLO-like ONNX file. For example, 512 means a input tensor '1x3x512x512' 
           
-          custom_class_count: 4 # Number of classes in the custom ONNX file. For example, 80 for YOLOv8 trained on COCO dataset
+          custom_class_count: 5 # Number of classes in the custom ONNX file. For example, 80 for YOLOv8 trained on COCO dataset
 
           # TODO: Add one instance of each class to the list below
           # Note: create a class_XXX identifier for each class in the custom ONNX file.
@@ -118,7 +118,7 @@
             prediction_timeout_s: 0.5 # Duration to keep predicting a track's position after occlusion. Default: 0.5 seconds
             min_confirmation_time_s: 0.05 # Minimum confirmation time required to validate a track. Default: 0.05 seconds
 
-          class_003:
+          class_004:
             label: 'yellow_cone'
             model_class_id: 4 # Class ID of the object in the custom ONNX file (it is not required that this value matches the value in the 'class_XXX' identifier)
             enabled: true # Enable/disable the detection of this class
