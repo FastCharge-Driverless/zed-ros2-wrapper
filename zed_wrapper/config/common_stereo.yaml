@@ -59,7 +59,7 @@
         sensors:
             publish_imu_tf: true # [overwritten by launch file options] enable/disable the IMU TF broadcasting
             sensors_image_sync: false # Synchronize Sensors messages with latest published video/depth message
-            sensors_pub_rate: 100. # frequency of publishing of sensors data. MAX: 400. - MIN: grab rate
+            sensors_pub_rate: 200. # frequency of publishing of sensors data. MAX: 400. - MIN: grab rate
             publish_imu: true # Advertise the IMU topic that is published only if a node subscribes to it
             publish_imu_raw: false # Advertise the raw IMU topic that is published only if a node subscribes to it
             publish_cam_imu_transf: false # Advertise the CAMERA-IMU transformation topic that is published only if a node subscribes to it
@@ -83,7 +83,7 @@
             publish_roi_mask: false # Advertise the ROI mask image topic that is published only if a node subscribes to it
 
         depth:
-            depth_mode: 'NEURAL' # Matches the ZED SDK setting: 'NONE', 'NEURAL_LIGHT', 'NEURAL', 'NEURAL_PLUS' - Note: if 'NONE' all the modules that requires depth extraction are disabled by default (Pos. Tracking, Obj. Detection, Mapping, ...)
+            depth_mode: 'NEURAL_LIGHT' # Matches the ZED SDK setting: 'NONE', 'NEURAL_LIGHT', 'NEURAL', 'NEURAL_PLUS' - Note: if 'NONE' all the modules that requires depth extraction are disabled by default (Pos. Tracking, Obj. Detection, Mapping, ...)
             depth_stabilization: -1 # Negative value takes SDK default, 0 is disabled - Range: [0,100]
             openni_depth_mode: false # 'false': 32bit float [meters], 'true': 16bit unsigned int [millimeters]
             point_cloud_freq: 10.0 # [DYNAMIC] Frequency of the pointcloud publishing. This value must be <= the camera framerate. Set to 0 for no limit (= grab_frame_rate).
@@ -159,7 +159,7 @@
             publish_det_plane: false # Advertise the plane detection topics that is published only if a node subscribes to it
 
         object_detection:
-            od_enabled: true # True to enable Object Detection
+            od_enabled: false # True to enable Object Detection
             enable_tracking: false # Whether the object detection system includes object tracking capabilities across a sequence of images.
             detection_model: 'CUSTOM_YOLOLIKE_BOX_OBJECTS' # 'MULTI_CLASS_BOX_FAST', 'MULTI_CLASS_BOX_MEDIUM', 'MULTI_CLASS_BOX_ACCURATE', 'PERSON_HEAD_BOX_FAST', 'PERSON_HEAD_BOX_ACCURATE', 'CUSTOM_YOLOLIKE_BOX_OBJECTS'
             max_range: 40.0 # [m] Upper depth range for detections.The value cannot be greater than 'depth.max_depth'
